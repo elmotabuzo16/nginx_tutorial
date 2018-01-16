@@ -16,7 +16,7 @@
 4. sites-available/ - it will not taken effect when nginx start, nginx reload, nginx restart
 
 # Process for Reverse Proxy
-1. Go to /etc/nginx/sites-available
+1. cd /etc/nginx/sites-available
 2. vim node-app
 3. Copy paste the code below
 
@@ -28,3 +28,5 @@ server {
     }
 }
 ```
+4. sudo ln -s /etc/nginx/sites-available/node-app /etc/nginx/sites-enabled/note-app
+5. sudo /etc/init.d/nginx start
