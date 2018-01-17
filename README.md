@@ -15,7 +15,7 @@
 3. sites-enabled/ - it will apply when nginx start, nginx reload, nginx restart
 4. sites-available/ - it will not taken effect when nginx start, nginx reload, nginx restart
 
-# Process for Reverse Proxy
+# Configuring Revere Proxy for Web
 ### For Single Application
 1. cd /etc/nginx/sites-available
 2. vim node-app
@@ -35,7 +35,11 @@ server {
 You can now access your website as localhost without typing the port like localhost:3000
 
 ### For Multiple Application
-1. Copy the code below
+1. sudo vi node-app
+2. sudo ln -s /etc/nginx/sites-available/node-app /etc/nginx/sites-enabled/note-app
+3. sudo /etc/init.d/nginx star
+4. sudo vi node-app
+5. Copy the code below
 ```python
 server {
     listen 80;
@@ -58,6 +62,6 @@ server {
     }
 }
 ```
-2. sudo /etc/init.d/nginx reload
+6. sudo /etc/init.d/nginx reload
 
 You can now access your 2nd application by typing localhost/codify or localhost/
